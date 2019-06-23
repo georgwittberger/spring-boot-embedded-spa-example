@@ -1,0 +1,51 @@
+# Homepage of the SPA, provides the HTML document of the SPA
+GET http://localhost:8080/ HTTP/1.1
+Accept: */*
+
+###
+
+# Route of the SPA, provides the HTML document of the SPA
+GET http://localhost:8080/some-route HTTP/1.1
+Accept: */*
+
+###
+
+# Nested route of the SPA, provides the HTML document of the SPA
+GET http://localhost:8080/some-route/sub-route HTTP/1.1
+Accept: */*
+
+###
+
+# Existing API endpoint, provides API response
+GET http://localhost:8080/api/text HTTP/1.1
+Accept: text/plain
+
+###
+
+# Non-existing API endpoint, provides 404 Not Found error
+GET http://localhost:8080/api/non-existing HTTP/1.1
+Accept: */*
+
+###
+
+# Existing stylesheet resource, provides CSS document
+GET http://localhost:8080/css/styles.css HTTP/1.1
+Accept: text/css
+
+###
+
+# Non-existing stylesheet resource, provides 404 Not Found error
+GET http://localhost:8080/css/non-existing.css HTTP/1.1
+Accept: */*
+
+###
+
+# Existing JavaScript resource, provides JavaScript document
+GET http://localhost:8080/js/app.js HTTP/1.1
+Accept: application/javascript
+
+###
+
+# Non-existing JavaScript resource, provides 404 Not Found error
+GET http://localhost:8080/js/non-existing.js HTTP/1.1
+Accept: */*
